@@ -1,80 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vasu Tonk | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vasu Tonk | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#f8fafc;
+    --text:#111827;
+    --card:#ffffff;
+    --primary:#2563eb;
+}
+
+.dark{
+    --bg:#0f172a;
+    --text:#f8fafc;
+    --card:#1e293b;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:.3s;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 2rem;
+    position:sticky;
+    top:0;
+    background:var(--card);
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:1rem;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+
+#theme-toggle{
+    padding:8px 12px;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    min-height:90vh;
+    padding:2rem;
+    flex-wrap:wrap;
+}
+
+.hero-content{
+    max-width:500px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero span{
+    color:var(--primary);
+}
+
+.hero p{
+    margin:10px 0;
+    line-height:1.6;
+}
+
+.profile-img{
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid var(--primary);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:var(--primary);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:4rem 2rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+}
+
+.card,.skill{
+    background:var(--card);
+    padding:1.5rem;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.skill:hover,
+.card:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.8s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+    display:none;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .profile-img{
+        margin-top:30px;
+        width:220px;
+        height:220px;
+    }
+}
+</style>
 </head>
+
 <body>
-<header class="header">
-  <nav class="navbar">
+
+<nav class="navbar">
     <div class="logo">Vasu Tonk</div>
+
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
+
     <button id="theme-toggle">🌙</button>
-  </nav>
+</nav>
 
-  <section class="hero">
-    <div>
-      <h1>Hi, I'm <span>Vasu Tonk</span></h1>
-      <p>Java Developer & Full Stack Developer</p>
-      <a href="#projects" class="btn">View Projects</a>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Vasu Tonk</span></h1>
+        <p><strong>Java Developer | React Developer | B.Tech CSE Graduate</strong></p>
+
+        <p>
+            Passionate about building responsive web applications and scalable
+            software solutions using Java, Spring Boot, React, HTML, CSS, and JavaScript.
+            Currently seeking opportunities to grow as a Software Developer.
+        </p>
+
+        <a href="#projects" class="btn">View Projects</a>
     </div>
-    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-  </section>
-</header>
 
-<main>
+    <img src="profile.JPG" alt="Vasu Tonk" class="profile-img">
+</section>
+
 <section id="about" class="card hidden">
-<h2>About</h2>
-<p>B.Tech Computer Science graduate passionate about Java, Full Stack Development, and building scalable applications.</p>
+    <h2>About Me</h2>
+    <br>
+    <p>
+        I am a B.Tech Computer Science graduate with a strong interest in
+        software development and problem-solving. I have completed a
+        3-month Java Developer Internship where I worked with Java,
+        Spring Boot, JDBC, and MySQL. I enjoy learning new technologies
+        and building real-world projects.
+    </p>
 </section>
 
 <section id="skills" class="hidden">
-<h2>Skills</h2>
-<div class="grid">
-<div class="skill">Java</div><div class="skill">JavaScript</div>
-<div class="skill">React</div><div class="skill">Node.js</div>
-<div class="skill">HTML</div><div class="skill">CSS</div>
-<div class="skill">MongoDB</div><div class="skill">MySQL</div>
-</div>
+    <h2>Skills</h2>
+    <br>
+
+    <div class="grid">
+        <div class="skill">Java</div>
+        <div class="skill">Spring Boot</div>
+        <div class="skill">React</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
 </section>
 
 <section id="experience" class="card hidden">
-<h2>Experience</h2>
-<h3>Java Developer Intern - iStudio</h3>
-<p>Built a billing application using Java Swing, JDBC and MySQL.</p>
+    <h2>Experience</h2>
+    <br>
+
+    <h3>Java Developer Intern</h3>
+    <p>
+        Worked on Java-based applications using Java, JDBC, MySQL, and
+        Spring Boot. Gained hands-on experience in backend development,
+        database operations, and software development practices.
+    </p>
 </section>
 
 <section id="projects" class="hidden">
-<h2>Projects</h2>
-<div class="grid">
-<div class="card">
-<h3>StudyNotion</h3>
-<p>MERN-based EdTech platform with JWT, Razorpay and Cloudinary integration.</p>
-</div>
-<div class="card">
-<h3>Billing Management System</h3>
-<p>Desktop application for retail billing and customer management.</p>
-</div>
-</div>
+    <h2>Projects</h2>
+    <br>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                Developed a responsive portfolio website using HTML, CSS,
+                and JavaScript to showcase skills, projects, and contact information.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Billing Management System</h3>
+            <p>
+                Desktop application developed using Java, JDBC, and MySQL
+                for customer and billing management.
+            </p>
+        </div>
+
+    </div>
 </section>
 
 <section id="contact" class="card hidden">
-<h2>Contact</h2>
-<p>Email: vasutonk75@gmail.com</p>
-<p>Phone: +91 7533861635</p>
-<p>LinkedIn: linkedin.com/in/vasutonk</p>
+    <h2>Contact</h2>
+    <br>
+
+    <p>Email: vasutonk75@gmail.com</p>
+    <p>Phone: +91 XXXXXXXXXX</p>
+    <p>GitHub: github.com/vasutonk</p>
+    <p>LinkedIn: linkedin.com/in/vasutonk</p>
 </section>
-</main>
 
 <button id="topBtn">↑</button>
-<script src="script.js"></script>
+
+<script>
+const toggle=document.getElementById('theme-toggle');
+
+if(localStorage.getItem('theme')==='dark'){
+    document.body.classList.add('dark');
+}
+
+toggle.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark') ? 'dark' : 'light'
+    );
+});
+
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.hidden')
+.forEach(el=>observer.observe(el));
+
+const topBtn=document.getElementById('topBtn');
+
+window.addEventListener('scroll',()=>{
+    topBtn.style.display=
+    window.scrollY>300 ? 'block' : 'none';
+});
+
+topBtn.onclick=()=>{
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+};
+</script>
+
 </body>
 </html>
